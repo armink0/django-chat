@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat soba</title>
+</head>
+<body>
+    Naziv sobe: 
+    <input id="soba-input" type="text" size="25"><br>
+    <input id="soba-submit" type="button" value="Potvrdi">
+
+    <script>
+        document.querySelector('#soba-input').focus();
+        document.querySelector('#soba-input').onkeyup = (e) => {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#soba-submit').click();
+            }
+        };
+
+        document.querySelector('#soba-submit').onclick = () => {
+            var naziv = document.querySelector('#soba-input').value;
+            window.location.pathname = '/chat/' + naziv + '/';
+        };
+    </script>
+</body>
+</html>
