@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <title>Chat soba</title>
-</head>
-<body>
-    Naziv sobe: 
-    <input id="room-name-input" type="text" size="25"><br>
-    <input id="room-name-submit" type="button" value="Potvrdi">
+{% extends "chat/base.html" %}
+
+{% block content %}
+
+    <div class="input-group w-50">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="">Naziv sobe:</span>
+        </div>
+        <input id="room-name-input" type="text" class="form-control">
+        <input class="btn btn-outline-primary ml-2" id="room-name-submit" type="button" value="Potvrdi">
+    </div>
 
     <script>
         document.querySelector('#room-name-input').focus();
@@ -22,5 +23,4 @@
             window.location.pathname = '/chat/' + roomName + '/';
         };
     </script>
-</body>
-</html>
+{% endblock content %}
